@@ -1,64 +1,60 @@
-import  React, {useSate} from 'react';
-import axios from "axios"
-
+import React, { useState } from "react";
+import axios from "axios";
 
 const initalState = {
-   username:"",
-   email:"",
-   password1:"",
-   password2:""
+  username: "",
+  email: "",
+  password: "",
+  password_re: "",
+  
+};
 
-}
+const SignUp = props => {
+  const [users, setUsers] = useState({ initalState });
 
-const SignUp = (props) => {
-    const [users, setUsers] =useSate({initalState});
+  const handleChange = e => {
+    setUsers({ ...users, [e.target.name]: e.target.value });
+  };
 
-    const handleChange = (e) => {
-        setUsers({...users, [e.target.name]: e.target.value })
-    }
+  const checkPassword = e => {
+    setUsers({ ...users, [e.target.name]: e.target.value });
+  }
 
-    
-    return(
-        
-            <form>
-               <input>
-               type="text"
-			   name="username"
-			   placeholder="Username"
-			   onChange={handleChange}
-			   value={users.username}
-               </input> 
-               <input> 
-               type="email"
-			   name="email"
-			   placeholder="Email"
-			   onChange={handleChange}
-			   value={users.email}  
-               </input>
-               <input>
-               type="password"
-			   name="password"
-			   placeholder="password"
-			   onChange={handleChange}
-			   value={users.password1}
-               </input>
-               <input>
-               type="password"
-			   name="re-password"
-			   placeholder="password"
-			   onChange={handleChange}
-			   value={users.password2}
-               </input>
+  return (
+    <form>
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        value={users.username}
+        onChange={handleChange}
+      />
 
-               <button type="submit">
-				Sign Up
-			   </button>
-            </form>
-      
-    )
-}
+      <input
+        type="text"
+        name="email"
+        placeholder="email"
+        value={users.email}
+        onChange={handleChange}
+      />
+
+      <input
+        type="password"
+        name="password"
+        placeholder="password"
+        value={users.password}
+        onChange={handleChange}
+      />
+
+      <input
+        type="password"
+        name="password_re"
+        placeholder="password_re"
+        value={users.password_re}
+        onChange={checkPassword}
+      />
+    </form>
+  );
+};
 
 export default SignUp;
-
-
-
