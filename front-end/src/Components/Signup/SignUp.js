@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import {Link} from 'react-router-dom';
 import axios from "axios";
+import axioswithAuth from '../../utils/axios'
 import './Signup.css';
 const initalState = {
   username: "",
@@ -20,10 +20,15 @@ const SignUp = props => {
   
   };
 
+ 
+ 
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`https://cs25-bw-be.herokuapp.com/api/registration/`, users).then((res) => {
+   axios
+    .post(`https://cs25-bw-be.herokuapp.com/api/registration/`, users).then((res) => {
         console.log('I am here', res)
+        props.history.push("/LogIn")
     });
 };
 
@@ -85,9 +90,9 @@ const SignUp = props => {
 
       />
       </div>
-      <Link ><button className = "btn" type="submit">
+     <button className = "btn" type="submit">
           Submit Button
-          </button></Link>
+          </button>
     </form>
     </div>
   );

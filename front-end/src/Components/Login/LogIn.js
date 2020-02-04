@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-// import axiosWithAuth from '../utils/axios'
-import {Link} from 'react-router-dom';
+import axiosWithAuth from '../../utils/axios'
 import axios from "axios";
 import './Login.css';
 
@@ -17,7 +16,6 @@ const initialState = {
 
    const handleChange = e => {
     setCreds({ ...creds, [e.target.name]: e.target.value });
-    console.log(e.target.value)
   };
    
   const handleSubmit = e => {
@@ -25,7 +23,8 @@ const initialState = {
     axios
     .post(`https://cs25-bw-be.herokuapp.com/api/login/`, creds)
     .then(res => {
-      localStorage.setItem('token', res.data.token);
+      localStorage.setItem('token', res.data.key);
+      props.history.push("/home");
     });
 
   }
@@ -46,9 +45,9 @@ const initialState = {
         </div>
 
         <div className = "input">
-        <label htmlFor="username"/>
-        <input
-         type="text"
+        <label htmlFor="email"/>
+         <input
+         type="email"
          name="email"
          placeholder="email"
          value={creds.email}
@@ -56,7 +55,7 @@ const initialState = {
          </div>
 
         <div className = "input">
-        <label htmlFor="username"/>
+        <label htmlFor="password"/>
          <input
          type="password"
          name="password"
@@ -65,7 +64,7 @@ const initialState = {
          onChange={handleChange}/>
          </div>
 
-            <Link><button className= "btn" type="submit"> Log In </button></Link>
+            <button className= "btn" type="submit"> Log In </button>
        </form>
       
      </div>
