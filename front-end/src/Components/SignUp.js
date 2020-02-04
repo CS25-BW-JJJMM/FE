@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-// import axiosWithAuth from "../utils/axios"
-import axios from "axios"
+import axios from "axios";
 
 const initalState = {
   username: "",
@@ -32,6 +31,8 @@ const SignUp = props => {
         placeholder="Username"
         value={users.username}
         onChange={handleChange}
+        pattern="^[a-zA-Z0-9_.-]*$"
+        required
       />
 
       <input
@@ -40,6 +41,8 @@ const SignUp = props => {
         placeholder="email"
         value={users.email}
         onChange={handleChange}
+        pattern="^[a-zA-Z0-9_.-]*$"
+        required
       />
 
       <input
@@ -59,6 +62,10 @@ const SignUp = props => {
         placeholder="password_re"
         value={users.password2}
         onChange={handleChange}
+        ma maxLength="24"
+        minLength="8"
+	    required
+
       />
       <button type="submit">
           Submit Button
