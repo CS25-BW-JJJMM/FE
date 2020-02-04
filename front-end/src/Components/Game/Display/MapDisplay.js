@@ -4,6 +4,13 @@ import axios from "../../../utils/axios";
 
 const myAxios = axios.axiosHeaders();
 
+const map = {
+  1: { n: 2, e: 4 },
+  2: { s: 1, e: 3 },
+  3: { w: 2, s: 4 },
+  4: { n: 3, w: 1 }
+};
+
 const MapDisplay = props => {
   useEffect(() => {
     myAxios
