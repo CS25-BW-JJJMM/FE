@@ -2,12 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import ArrowImage from "../../../assets/arrow-up.svg";
 
+// css transform directions for arrow
 const directions = {
   n: "0deg",
   s: "180deg",
   e: "90deg",
   w: "270deg"
 };
+
+// props.direction uses object above to determine
+// direction that arrow will be pointing
 const DirButton = props => {
 
   return (
