@@ -36,6 +36,7 @@ const SignUp = props => {
       />
 
       <input
+        id="pass1"
         type="text"
         name="email"
         placeholder="email"
