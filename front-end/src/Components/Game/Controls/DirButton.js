@@ -13,14 +13,13 @@ const directions = {
 // props.direction uses object above to determine
 // direction that arrow will be pointing
 const DirButton = props => {
-
   return (
-    <StyledButton type="button">
+    <StyledButton type="button" onClick={() => props.movement(props.direction)}>
       <img
         src={ArrowImage}
         style={{
           transform: `rotate(${directions[props.direction]})`,
-          width: "50px",
+          width: "50px"
         }}
         alt="a directional arrow"
       />

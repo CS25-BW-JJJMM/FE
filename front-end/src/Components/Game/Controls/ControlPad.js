@@ -7,12 +7,12 @@ const ControlPad = props => {
   return (
     <Panel>
       <ControlsWrapper>
-        <DirButton direction="w" />
+        <DirButton direction="w" movement={props.movement} />
         <MiddleButtons>
-          <DirButton direction="n" />
-          <DirButton direction="s" />
+          <DirButton direction="n" movement={props.movement} />
+          <DirButton direction="s" movement={props.movement} />
         </MiddleButtons>
-        <DirButton direction="e" />
+        <DirButton direction="e" movement={props.movement} />
       </ControlsWrapper>
     </Panel>
   );
