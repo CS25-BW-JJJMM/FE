@@ -1,0 +1,19 @@
+.right-header {
+    float: right;
+    color:  white;
+    text-transform: uppercase;
+    font-size: 22px;
+    background-color: #24292e;
+    margin-top: 25px;
+}
+
+.white-color {
+    color: white;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+.left-header {
+    float: left;
+    margin-left: 25px;
+}

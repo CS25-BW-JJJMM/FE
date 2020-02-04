@@ -9,8 +9,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-       {/* <Header/> */}
       <Router>
+      <Header/>
        <Route exact path ="/signup" component={SignUp}/>
        <Route exact path ="/login" component={LogIn}/>
        </Router>
