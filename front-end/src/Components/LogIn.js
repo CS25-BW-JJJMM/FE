@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 // import axiosWithAuth from '../utils/axios'
+import {Link} from 'react-router-dom';
 import axios from "axios";
 
 const initialState = {
@@ -11,6 +12,7 @@ const initialState = {
 
   const LogIn = (props) => {
    const [creds, setCreds] =  useState(initialState);
+  
 
    const handleChange = e => {
     setCreds({ ...creds, [e.target.name]: e.target.value });
@@ -52,7 +54,7 @@ const initialState = {
          value={creds.password}
          onChange={handleChange}/>
 
-         <button type="submit"> Log In </button>
+            <Link><button type="submit"> Log In </button></Link>
        </form>
       
      </div>

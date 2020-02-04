@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Link} from 'react-router-dom';
 import axios from "axios";
 
 const initalState = {
@@ -11,9 +12,12 @@ const initalState = {
 
 const SignUp = props => {
   const [users, setUsers] = useState({ initalState });
+ 
 
   const handleChange = e => {
     setUsers({ ...users, [e.target.name]: e.target.value });
+  
+  
   };
 
   const handleSubmit = (e) => {
@@ -67,9 +71,9 @@ const SignUp = props => {
 	    required
 
       />
-      <button type="submit">
+      <Link to='/LogIn'><button type="submit">
           Submit Button
-      </button>
+          </button></Link>
     </form>
   );
 };
