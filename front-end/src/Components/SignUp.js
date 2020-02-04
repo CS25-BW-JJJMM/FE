@@ -85,7 +85,7 @@ const SignUp = props => {
 
       />
       </div>
-      <Link to='/LogIn'><button className = "btn" type="submit">
+      <Link ><button className = "btn" type="submit">
           Submit Button
           </button></Link>
     </form>
