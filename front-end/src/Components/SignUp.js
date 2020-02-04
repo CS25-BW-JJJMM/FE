@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import  axiosWithAuth from "../utils/axios"
 
 const initalState = {
   username: "",
@@ -18,7 +18,7 @@ const SignUp = props => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`https://cs25-bw-be.herokuapp.com/api/registration/`, users).then((res) => {
+    axiosWithAuth().post(`https://cs25-bw-be.herokuapp.com/api/registration/`, users).then((res) => {
         console.log('I am here', res)
     });
 };
