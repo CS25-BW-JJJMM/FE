@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+// import axiosWithAuth from '../utils/axios'
+import axios from "axios";
 
 const initialState = {
     username: "",
@@ -14,11 +16,21 @@ const initialState = {
     setCreds({ ...creds, [e.target.name]: e.target.value });
     console.log(e.target.value)
   };
+   
+  const handleSubmit = e => {
+    e.preventDefault();
+    axios
+    .post(`https://cs25-bw-be.herokuapp.com/api/login/`, creds)
+    .then(res => {
+      localStorage.setItem('token', res.data.token);
+    });
+
+  }
 
    return(
       
      <div>
-        <form>
+        <form onSubmit={handleSubmit}>
        <input
        type="text"
         name="username"
@@ -40,9 +52,7 @@ const initialState = {
          value={creds.password}
          onChange={handleChange}/>
 
-         <button>
-           Log In
-         </button>
+         <button type="submit"> Log In </button>
        </form>
       
      </div>

@@ -41,8 +41,7 @@ const SignUp = props => {
         placeholder="email"
         value={users.email}
         onChange={handleChange}
-        pattern="^[a-zA-Z0-9_.-]*$"
-        required
+       
       />
 
       <input
