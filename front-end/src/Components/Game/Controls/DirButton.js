@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ArrowImage from "../../../assets/icons8-arrow-button.png";
+import ArrowImage from "../../../assets/arrow-up.svg";
 
 const directions = {
   n: "0deg",
@@ -9,16 +9,16 @@ const directions = {
   w: "270deg"
 };
 const DirButton = props => {
-  const whichWay = `transform: rotate(${directions[props.direction]})`;
 
   return (
-    <StyledButton>
+    <StyledButton type="button">
       <img
         src={ArrowImage}
         style={{
           transform: `rotate(${directions[props.direction]})`,
-          width: "50px"
+          width: "50px",
         }}
+        alt="a directional arrow"
       />
     </StyledButton>
   );
@@ -26,7 +26,12 @@ const DirButton = props => {
 
 const StyledButton = styled.button`
   width: 50px;
+  height: 50px;
   border: none;
+  display: flex;
+  background-color: #000000;
+  border-radius: 100%;
+  border: 2px solid #755b69;
 `;
 
 export default DirButton;
