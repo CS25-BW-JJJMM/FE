@@ -48,7 +48,7 @@ const initialState = {
          <input
          type="password"
          name="password"
-         placeholder="password"
+         placeholder="password-re"
          value={creds.password}
          onChange={handleChange}/>
 

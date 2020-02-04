@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch } from "react-router-dom";
 import SignUp from "../src/Components/SignUp";
 import LogIn from "../src/Components/LogIn"
 import './App.css';
@@ -6,10 +7,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
        <SignUp/>
        <LogIn/>
-      </header>
     </div>
   );
 }
