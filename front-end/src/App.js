@@ -5,12 +5,13 @@ import LogIn from "../src/Components/LogIn";
 import Header from "../src/Components/Header"
 import './App.css';
 
+
 function App() {
   return (
     <div className="App">
+       {/* <Header/> */}
       <Router>
-        <Header/>
-         <Route exact path ="/signup" component={SignUp}/>
+       <Route exact path ="/signup" component={SignUp}/>
        <Route exact path ="/login" component={LogIn}/>
        </Router>
     </div>

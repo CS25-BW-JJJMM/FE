@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {Link} from 'react-router-dom';
 import axios from "axios";
-
+import './Signup.css';
 const initalState = {
   username: "",
   email: "",
@@ -28,7 +28,10 @@ const SignUp = props => {
 };
 
   return (
-    <form onSubmit={handleSubmit} >
+    <div className= "container">
+    <form className = "form" onSubmit={handleSubmit} >
+      <div className = "input">
+    <label htmlFor="username"/>
       <input
         type="text"
         name="username"
@@ -38,7 +41,10 @@ const SignUp = props => {
         pattern="^[a-zA-Z0-9_.-]*$"
         required
       />
+      </div>
 
+    <div className = "input">
+    <label htmlFor="email"/>
       <input
         id="pass1"
         type="text"
@@ -48,7 +54,11 @@ const SignUp = props => {
         onChange={handleChange}
        
       />
+      </div>
 
+
+   <div className = "input">
+    <label htmlFor="password"/>
       <input
         type="password"
         name="password1"
@@ -59,7 +69,10 @@ const SignUp = props => {
         minLength="8"
 	    required
       />
+      </div>
 
+    <div className = "input">
+    <label htmlFor="password-re"/>
       <input
         type="password"
         name="password2"
@@ -71,10 +84,12 @@ const SignUp = props => {
 	    required
 
       />
-      <Link to='/LogIn'><button type="submit">
+      </div>
+      <Link to='/LogIn'><button className = "btn" type="submit">
           Submit Button
           </button></Link>
     </form>
+    </div>
   );
 };
 
