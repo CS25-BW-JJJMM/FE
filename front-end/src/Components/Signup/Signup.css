@@ -1,5 +1,8 @@
 body {
-
+    background-image: url("https://media3.giphy.com/media/UIkdSRPx5Yb9m/giphy.gif");
+    box-shadow: 0 0 5px 2px #282a2d;
+    background-repeat: no-repeat, repeat;
+    background-color: #cccccc;
     background-color: #010108;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -19,10 +22,12 @@ body {
 .form {
     width:100%;
     align-items: left;
+    margin-right:20px ;
 }
 
 .input {
     padding: 10px;
+
 }
 
 input{
