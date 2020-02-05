@@ -8,7 +8,7 @@ const axiosWithAuth = {
   axiosHeaders: function() {
     console.log(this.endpoint, localStorage.getItem("key"));
     // get token from localstorage
-    let token = localStorage.getItem("key");
+    let token = localStorage.getItem("token");
     return axios.create({
       baseURL: this.endpoint,
       headers: {

@@ -22,7 +22,8 @@ export default function Game(props) {
         setRoom({
           title: data.title,
           description: data.description,
-          players: data.players
+          players: data.players,
+          roomId: data.room_id
         });
         setName(data.name);
         setError(data.error_msg);
@@ -39,7 +40,8 @@ export default function Game(props) {
       setRoom({
         title: data.title,
         description: data.description,
-        players: data.players
+        players: data.players,
+        roomId: data.room_id
       });
       if (data.error_msg) {
         setError(data.error_msg);
@@ -54,7 +56,7 @@ export default function Game(props) {
     <div>
       <ControlPad movement={move} />
       <DescriptionBox description={currentRoom.description} error={error} />
-      <MapDisplay />
+      <MapDisplay currentRoom={currentRoom.roomId} />
     </div>
   );
 }
