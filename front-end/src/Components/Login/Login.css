@@ -1,5 +1,4 @@
 body {
-
     background-color: #010108;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -31,7 +30,7 @@ body {
 
 input{
     padding:20px;
-    width:40%;
+    width:30%;
     background-color: rgb(3, 7, 22);
     color:white;
     border: 1px solid rgb(0, 162, 255);
