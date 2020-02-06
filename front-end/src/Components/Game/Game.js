@@ -43,9 +43,7 @@ export default function Game(props) {
         players: data.players,
         roomId: data.room_id
       });
-      if (data.error_msg) {
-        setError(data.error_msg);
-      }
+      setError(data.error_msg);
     } catch (err) {
       console.log(err);
       setError(err);

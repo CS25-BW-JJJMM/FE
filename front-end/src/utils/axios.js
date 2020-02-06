@@ -3,7 +3,7 @@ import axios from "axios";
 require("dotenv").config();
 
 const axiosWithAuth = {
-  endpoint: process.env.REACT_APP_BASE_URL || "https://cs25-bw-be.herokuapp.com",
+  endpoint: process.env.REACT_APP_API_BASE_URL || "https://cs25-bw-be.herokuapp.com",
 
   axiosHeaders: function() {
     console.log(this.endpoint, localStorage.getItem("key"));
