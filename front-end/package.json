@@ -23,9 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-
-
-    "engines": {
-      "node": "12.x"
-    }
+  "engines": {
+    "node": "12.x"
   }
+}
