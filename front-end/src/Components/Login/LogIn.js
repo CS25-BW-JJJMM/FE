@@ -9,7 +9,7 @@ const initialState = {
   password: ""
 };
 
-const baseUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:8000";
+const baseUrl = process.env.REACT_APP_API_BASE_URL || "https://cs25-bw-be.herokuapp.com";
 
 const LogIn = props => {
   const [creds, setCreds] = useState(initialState);
