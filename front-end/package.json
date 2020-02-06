@@ -24,6 +24,6 @@
     "eject": "react-scripts eject"
   },
   "engines": {
-    "node": ">=0.10.3 <0.12"
+    "node": "12.x"
   }
 }
