@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import {
   FlexibleXYPlot,
-  XAxis,
-  YAxis,
-  HorizontalGridLines,
-  LineSeries,
+  // XAxis,
+  // YAxis,
+  // HorizontalGridLines,
+  // LineSeries,
   MarkSeries
 } from "react-vis";
 import axios from "../../../utils/axios";
