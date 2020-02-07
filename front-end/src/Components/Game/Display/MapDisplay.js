@@ -28,15 +28,16 @@ const MapDisplay = props => {
   const plots = map.map(room => {
     return { x: room.x, y: room.y };
   });
-  // if (map.length) {
-  //   let playerPos = map[props.currentRoom];
-  //   console.log(playerPos);
-  //   let marker = { x: playerPos.x, y: playerPos.y };
-  // }
   let marker = { x: 0, y: 0 };
-  if (props.currentRoom) {
-    marker = { ...plots[props.currentRoom] };
+  if (map.length) {
+    let playerPos = map[props.currentRoom];
+    console.log(playerPos);
+    marker = { x: playerPos.x, y: playerPos.y };
   }
+  // let marker = { x: 0, y: 0 };
+  // if (props.currentRoom) {
+  //   marker = { ...plots[props.currentRoom] };
+  // }
   console.log("marker: ", marker);
   console.log("coord ", plots);
 
@@ -49,8 +50,7 @@ const MapDisplay = props => {
           className="player"
           color={"yellow"}
         />
-        <MarkSeries
-        data={[marker]} />
+        <MarkSeries data={[marker]} />
         {/* <LineSeries data={plots} fill="dashed"/> */}
       </FlexibleXYPlot>{" "}
     </div>
