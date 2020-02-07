@@ -54,7 +54,7 @@ export default function Game(props) {
     <div>
       <ControlPad movement={move} />
       <DescriptionBox description={currentRoom.description} error={error} />
-      <MapDisplay currentRoom={currentRoom.roomId} />
+      {currentRoom.roomId && <MapDisplay currentRoom={currentRoom.roomId} />}
     </div>
   );
 }
