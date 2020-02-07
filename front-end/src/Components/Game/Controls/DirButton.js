@@ -13,8 +13,21 @@ const directions = {
 // props.direction uses object above to determine
 // direction that arrow will be pointing
 const DirButton = props => {
+  const keyNavigate = (event) => {
+    if (event.which == 38 || event.which == 78) {
+      props.movement("n")
+    } else if (event.which == 40 || event.which == 83) {
+      props.movement("s");
+    } else if (event.which == 39 || event.which == 69) {
+      props.movement("e");
+    } else if (event.which == 37 || event.which == 87) {
+      props.movement("w");
+    }
+  }
+
   return (
-    <StyledButton type="button" onClick={() => props.movement(props.direction)}>
+    <div onKeyDown={(e) => keyNavigate(e) } tabIndex="0">
+    <StyledButton type="button" onClick={() => { props.movement(props.direction);} }>
       <img
         src={ArrowImage}
         style={{
@@ -24,6 +37,7 @@ const DirButton = props => {
         alt="a directional arrow"
       />
     </StyledButton>
+    </div>
   );
 };
 
